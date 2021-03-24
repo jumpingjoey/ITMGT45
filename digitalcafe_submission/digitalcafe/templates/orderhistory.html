@@ -1,0 +1,15 @@
+{% include "header.html" %}
+  <h1>Order History</h1>
+  <table>
+    <tr>
+      <th>Code</th><th>Name</th><th>Quantity</th><th>Subtotal</th></tr>
+    {% for product in past_product_orders %}
+      <tr>
+        <td>{{product["code"]}}</td>
+        <td>{{product["name"]}}</td>
+        <td>{{product["qty"]}}</td>
+        <td>{{product["subtotal"]|round}}</td>
+      </tr>
+    {% endfor%}
+  </table>
+{% include "footer.html" %}
